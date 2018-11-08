@@ -1,4 +1,4 @@
-package kr.susemi99.kotlinmvvmsettingsample;
+package kr.susemi99.kotlinmvvmsettingsample.todo
 
 import android.util.Log
 import androidx.databinding.ObservableField
@@ -7,7 +7,7 @@ import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
 
-class MainActivityModel : ViewModel() {
+class ToDoFragmentModel : ViewModel() {
   var title = ObservableField<String>()
   private var intervalDispose: Disposable? = null
 
@@ -33,9 +33,5 @@ class MainActivityModel : ViewModel() {
 
     Log.i("APP#", "=== cleared ===")
     intervalDispose?.dispose()
-  }
-
-  fun buttonClicked() {
-    title.set("clicked")
   }
 }
